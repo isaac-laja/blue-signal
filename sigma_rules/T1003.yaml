@@ -1,0 +1,27 @@
+title: LSASS Full Access - Possible Credential Dumping
+id: 02cafa47-2b55-40c5-a0bb-f5fe392baf19
+status: experimental 
+description: Detects processes requesting full or high-level access to LSASS memory, a common technique for dumping credentials
+references: 
+  - https://attack.mitre.org/techniques/T1003/
+author: Isaac Laja
+date: 2026/07/28
+logsource: 
+  product: windows
+  category: process_access
+detection: 
+  selection:
+    TargetImage|endswith: '\lsass.exe'
+    CallTrace|contains:
+      - 'ntdll.dll'
+      - 'kernel32.dll'
+      - 'kernelbase.dll' 
+    GrantedAccess|contains: 
+      - '0x1fffff'
+  condition: selection
+falsepositives:
+  - Legitimate reason for accessing memory
+level: high
+tags: 
+  - attack.credential_access
+  - attack.t1003
