@@ -14,8 +14,8 @@ detection:
       - '-EncodedCommand'
       - '-encodedcommand'
       - '-enc'
-      - 'ec'
-      - 'e'
+      - '-ec'
+      - '-e'
   condition: selection 
 falsepositives: 
   - Legitimate automation or admin scripts that use encoded commands
