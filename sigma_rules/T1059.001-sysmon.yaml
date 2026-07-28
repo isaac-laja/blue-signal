@@ -18,6 +18,8 @@ detection:
       - 'ec'
       - 'e'
   condition: selection
+falsepositives: 
+  - Legitimate automation or admin scripts that use encoded commands
 level: high
 tags: 
   - attack.Execution
