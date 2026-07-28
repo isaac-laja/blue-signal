@@ -1,7 +1,6 @@
-title: 
-id: 
-status: experimental 
-description: 
+title: T1059.001 Detection with sysmon logs
+status: test
+description: Detects execution of Powershell with an endocded command using sysmon logs
 references: 
   - https://attack.mitre.org/techniques/T1059/001/
 author: Isaac Laja
