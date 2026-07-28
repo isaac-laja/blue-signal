@@ -1,23 +1,21 @@
-title: T1059.001 Detection with sysmon logs
+title: Encoded PowerShell Command Execution (Process Creation)
+id: 
 status: test
-description: Detects execution of Powershell with an endocded command using sysmon logs
+description: Detects execution of PowerShell with an encoded command using Sysmon process creation logs
 references: 
   - https://attack.mitre.org/techniques/T1059/001/
 author: Isaac Laja
 date: 2026/07/27
 logsource: 
-  products: windows 
-  category: registry_event 
+  product: windows 
+  category: process_creation
 detection:
   selection: 
     CommandLine|contains: 
-      - '-e'
-      - '-ec'
-      - '-en'
       - '-EncodedCommand'
       - '-encodedcommand'
       - '-enc'
   condition: selection
 tags: 
   - attack.Execution
-  - attack.T1059.001
+  - attack.t1059.001
