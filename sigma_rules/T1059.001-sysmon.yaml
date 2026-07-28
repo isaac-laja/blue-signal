@@ -11,4 +11,14 @@ logsource:
   category: registry_event 
 detection:
   selection: 
-    
+    CommandLine|contains: 
+      - '-e'
+      - '-ec'
+      - '-en'
+      - '-EncodedCommand'
+      - '-encodedcommand'
+      - '-enc'
+  condition: selection
+tags: 
+  - attack.Execution
+  - attack.T1059.001
