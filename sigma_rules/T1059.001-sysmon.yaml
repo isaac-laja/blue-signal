@@ -11,7 +11,7 @@ logsource:
   category: process_creation
 detection:
   selection: 
-    CommandLine|re: 
+    CommandLine|contains: 
       - '-EncodedCommand'
       - '-encodedcommand'
       - '-enc '
@@ -22,5 +22,5 @@ falsepositives:
   - Legitimate automation or admin scripts that use encoded commands
 level: high
 tags: 
-  - attack.Execution
+  - attack.execution
   - attack.t1059.001
