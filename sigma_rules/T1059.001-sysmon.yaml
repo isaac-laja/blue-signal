@@ -16,6 +16,7 @@ detection:
       - '-encodedcommand'
       - '-enc'
   condition: selection
+level: high
 tags: 
   - attack.Execution
   - attack.t1059.001
