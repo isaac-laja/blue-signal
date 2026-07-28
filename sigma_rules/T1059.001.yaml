@@ -1,0 +1,22 @@
+title: T1059.001 Detection 
+status: test
+description: Detects execution of Poweershell with an endocded command
+references: 
+  - https://attack.mitre.org/techniques/T1059/001/
+author: Isaac Laja
+date: 2026/07/27
+logsource: 
+  product: windows 
+  category: ps_script
+detection: 
+  selection: 
+    ScriptBlockText|contains: 
+      - '-e'
+      - '-enc'
+      - '-encodedcommand'
+  condition: selection 
+falsepositives: 
+  - Scripts may have to be run by administrators for whatever reason 
+tags: 
+  - attack.execution
+  - attack.T1059.001
