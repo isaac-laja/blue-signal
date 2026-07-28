@@ -1,5 +1,5 @@
 title: Encoded PowerShell Command Execution (Process Creation)
-id: 
+id: 115e0bc1-7810-4d88-9468-06cfd658946f
 status: test
 description: Detects execution of PowerShell with an encoded command using Sysmon process creation logs
 references: 
