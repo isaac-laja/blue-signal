@@ -1,0 +1,14 @@
+title: 
+id: 
+status: experimental 
+description: 
+references: 
+  - https://attack.mitre.org/techniques/T1059/001/
+author: Isaac Laja
+date: 2026/07/27
+logsource: 
+  products: windows 
+  category: registry_event 
+detection:
+  selection: 
+    
