@@ -1,8 +1,7 @@
-title: Encoded PowerShell Command Execution (Process Creation)
+title: Encoded PowerShell Command Execution (Script Block Logging)
 id: 
 status: test
-description: Detects execution of PowerShell with an encoded command using Sysmon process creation logs
-references: 
+description: Detects execution of PowerShell with an encoded command using PowerShell Script Block Logging
   - https://attack.mitre.org/techniques/T1059/001/
 author: Isaac Laja
 date: 2026/07/27
