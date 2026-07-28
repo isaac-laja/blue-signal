@@ -1,6 +1,7 @@
-title: T1059.001 Detection with powershell logs
+title: Encoded PowerShell Command Execution (Process Creation)
+id: 
 status: test
-description: Detects execution of Powershell with an endocded command using powershell logs
+description: Detects execution of PowerShell with an encoded command using Sysmon process creation logs
 references: 
   - https://attack.mitre.org/techniques/T1059/001/
 author: Isaac Laja
@@ -16,7 +17,8 @@ detection:
       - '-encodedcommand'
   condition: selection 
 falsepositives: 
-  - Scripts may have to be run by administrators for whatever reason 
+  - Legitimate automation or admin scripts that use encoded commands
+level: high
 tags: 
   - attack.execution
-  - attack.T1059.001
+  - attack.t1059.001
