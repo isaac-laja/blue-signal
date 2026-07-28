@@ -12,8 +12,8 @@ logsource:
 detection: 
   selection: 
     ScriptBlockText|contains: 
-      - '-e'
       - '-enc'
+      - '-EncodedCommand'
       - '-encodedcommand'
   condition: selection 
 falsepositives: 
