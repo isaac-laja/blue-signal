@@ -10,10 +10,12 @@ logsource:
   category: ps_script
 detection: 
   selection: 
-    ScriptBlockText|contains: 
-      - '-enc'
+    ScriptBlockText|re: 
       - '-EncodedCommand'
       - '-encodedcommand'
+      - '-enc'
+      - 'ec'
+      - 'e'
   condition: selection 
 falsepositives: 
   - Legitimate automation or admin scripts that use encoded commands
