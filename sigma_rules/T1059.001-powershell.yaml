@@ -2,6 +2,7 @@ title: Encoded PowerShell Command Execution (Script Block Logging)
 id: 73d3fc92-d910-456f-be1a-e16f15f9c3c1 
 status: test
 description: Detects execution of PowerShell with an encoded command using PowerShell Script Block Logging
+references: 
   - https://attack.mitre.org/techniques/T1059/001/
 author: Isaac Laja
 date: 2026/07/27
@@ -13,9 +14,9 @@ detection:
     ScriptBlockText|re: 
       - '-EncodedCommand'
       - '-encodedcommand'
-      - '-enc'
-      - '-ec'
-      - '-e'
+      - '-enc '
+      - '-ec '
+      - '-e '
   condition: selection 
 falsepositives: 
   - Legitimate automation or admin scripts that use encoded commands
