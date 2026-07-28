@@ -11,7 +11,7 @@ logsource:
   category: ps_script
 detection: 
   selection: 
-    ScriptBlockText|re: 
+    ScriptBlockText|contains: 
       - '-EncodedCommand'
       - '-encodedcommand'
       - '-enc '
