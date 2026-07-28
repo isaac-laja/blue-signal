@@ -1,6 +1,6 @@
 title: T1059.001 Detection with powershell logs
 status: test
-description: Detects execution of Poweershell with an endocded command
+description: Detects execution of Powershell with an endocded command using powershell logs
 references: 
   - https://attack.mitre.org/techniques/T1059/001/
 author: Isaac Laja
