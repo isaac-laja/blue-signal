@@ -11,10 +11,12 @@ logsource:
   category: process_creation
 detection:
   selection: 
-    CommandLine|contains: 
+    CommandLine|re: 
       - '-EncodedCommand'
       - '-encodedcommand'
       - '-enc'
+      - 'ec'
+      - 'e'
   condition: selection
 level: high
 tags: 
