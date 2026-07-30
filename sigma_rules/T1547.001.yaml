@@ -1,0 +1,28 @@
+title: New Registry Run Key Persistence
+id: 7ef833d0-1074-4946-b7da-650eb039393e
+status: experimental
+description: Detects new entries added to Run/RunOnce and related autostart registry keys, a common persistence technique
+references:
+    - https://attack.mitre.org/techniques/T1547/001/
+author: Isaac Laja
+date: 2026/07/30
+logsource:
+    product: windows
+    category: registry_event
+detection:
+    selection:
+        EventType: 'SetValue'
+        TargetObject|contains:
+            - 'Software\Microsoft\Windows\CurrentVersion\RunServicesOnce'
+            - 'Software\Microsoft\Windows\CurrentVersion\RunServices'
+            - 'Software\Microsoft\Windows\CurrentVersion\Run'
+            - 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders'
+            - 'SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\User Shell Folders'
+    condition: selection
+falsepositives:
+    - Legitimate software installers adding startup entries
+level: medium
+tags:
+    - attack.persistence
+    - attack.privilege_escalation
+    - attack.t1547.001
