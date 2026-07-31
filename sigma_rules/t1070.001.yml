@@ -12,8 +12,8 @@ logsource:
 detection:
     selection:
         CommandLine|contains:
-            - 'wevtutil cl'
-            - 'wevtutil.exe cl'
+            - '"wevtutil" cl'
+            - '"wevtutil.exe" cl'
             - 'Clear-EventLog'
     condition: selection
 falsepositives:
