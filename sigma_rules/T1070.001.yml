@@ -1,0 +1,24 @@
+title: Clear Windows Event Viewer Logs
+id: dc65a6c0-688e-4695-99da-09a78b7312d3
+status: experimental
+description: Detects use of wevtutil or PowerShell to clear Windows event logs, often used by attackers to cover their tracks
+references:
+    - https://attack.mitre.org/versions/v8/techniques/T1070/001/
+author: Isaac Laja
+date: 2026/07/31
+logsource:
+    product: windows
+    category: process_creation
+detection:
+    selection:
+        CommandLine|contains:
+            - 'wevtutil cl'
+            - 'wevtutil.exe cl'
+            - 'Clear-EventLog'
+    condition: selection
+falsepositives:
+    - Administrator performing legitimate log rotation/maintenance
+level: medium
+tags:
+    - attack.defense_evasion
+    - attack.t1070.001
